@@ -3,3 +3,6 @@
 #nav-items {
     list-style-type: none;
 }
+#nav-items > li {
+    display: inline;
+}
