@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300|Raleway:100,300,400|Montserrat|Noto+Serif:400,700');
 
+body {
+    height: 100vh;
+}
+nav {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 #nav-items {
     list-style-type: none;
 }
