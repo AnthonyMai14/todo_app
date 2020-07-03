@@ -14,17 +14,23 @@
     <title>TODO App</title>
 </head>
 <body>
+    <nav>
+        <a href="#">All</a>
+        <a href="#">Active</a>
+        <a href="#">Active</a>
+        <button id="btn-add_task">+</button>
+    </nav>
     <header>
         <h1>Tasks</h1>
     </header>
-    <button></button>
-    <nav>
-        <ul id="nav-items">
-            <li>All</li>
-            <li>Active</li>
-            <li>Completed</li>
-        </ul>
-    </nav>
+    <main>
+        <section class="task" id="list">
+            <input type="checkbox" id="exist" name="exist" value="exist">
+            <label for="exist">This is an existing task</label><br>
+            <input type="checkbox" id="complete" name="complete" value="complete" style="border: gold;">
+            <label for="complete"><del>This is a completed task</del></label>
+        </section>
+    </main>
 </body>
 
 </html>
