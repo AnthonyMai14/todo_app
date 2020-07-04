@@ -7,7 +7,9 @@ a {
     text-decoration: none;
 }
 body {
-    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    padding: 0 40px;
 }
 del {
     color: #fca311;
@@ -21,6 +23,11 @@ header {
     width: 100%;
     height: 40px;
     margin: 20px;
+    background-color: white;
+}
+html {
+    height: 100vh;
+    width: 100vw;
 }
 main {
     min-height: 100%;
@@ -38,11 +45,10 @@ nav {
     /*set dimension to match page*/
     min-width: 100vw;
     height: 40px;
-    margin: 0 auto 60px;
     /*evenly space out items*/
     display: flex;
     justify-content: space-evenly;
-    background-color: thistle;
+    background-color: white;
 }
 #btn-add_task {
     background-color: #fca311;
