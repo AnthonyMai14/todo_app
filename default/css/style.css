@@ -3,6 +3,11 @@
     font-family: 'Arial', sans-serif;
     color: grey;
 }
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
 a {
     text-decoration: none;
 }
@@ -18,43 +23,46 @@ body {
 del {
     color: #fca311;
 }
-h1 {
-    color: #fca311;
-    margin: 0;
-}
 header {
-    position: absolute;
+    position: fixed;
     top: 20px;
     width: 100%;
     height: 40px;
     margin: 20px 0;
-    background-color: blue;
     z-index: 9999;
+    overflow: hidden;
+    background-color: blue;
+    color: #fca311;
+    font-size: x-large;
 }
 html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     height: 100vh;
     width: 100vw;
 }
 main {
-    position: absolute;
-    height: 100%;
+    max-height: 100%;
     width: 100%;
-    padding: 150px 0;
+    padding: 100px 0 0;
     background-color: teal;
+    overflow: auto;
 }
 nav {
     /*put nav at bottom of page*/
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 0;
     right: 0;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 100;
     /*set dimension to match page*/
     min-width: 100vw;
     height: 40px;
     /*evenly space out items*/
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     background-color: blue;
 }
@@ -63,8 +71,10 @@ nav {
     border: none;
     color: white;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
+    font-size: x-large;
+    z-index: 200;
 }
 #nav-items {
     list-style-type: none;
