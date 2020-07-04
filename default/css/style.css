@@ -10,17 +10,17 @@ body {
     max-height: 100vh;
 }
 del {
-    color: gold;
+    color: #fca311;
 }
 h1 {
-    color: gold;
+    color: #fca311;
 }
 header {
     position: fixed;
     top: 20px;
     width: 100%;
+    height: 40px;
     margin: 20px;
-    
 }
 main {
     min-height: 100%;
@@ -31,22 +31,30 @@ nav {
     /*put nav at bottom of page*/
     position: fixed;
     bottom: 0px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 9999;
     /*set dimension to match page*/
-    width: 100vw;
+    min-width: 100vw;
+    height: 40px;
     margin: 0 auto 60px;
     /*evenly space out items*/
     display: flex;
     justify-content: space-evenly;
+    background-color: thistle;
 }
 #btn-add_task {
-    background-color: gold;
+    background-color: #fca311;
     border: none;
     color: white;
     border-radius: 50%;
+    width: 30px;
+    height: 30px;
 }
 #nav-items {
     list-style-type: none;
 }
 #nav-items > li {
-    display: inline;
+    display: block;
 }
