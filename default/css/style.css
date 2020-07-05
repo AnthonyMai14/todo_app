@@ -84,6 +84,6 @@ nav {
 #nav-items {
     list-style-type: none;
 }
-#task-new {
+.task-new {
     display: none;
 }
