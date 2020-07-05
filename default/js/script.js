@@ -1,6 +1,7 @@
+var array_task = [];
 $(function() {
-    $('#btn-add_task').click(
-        $('p').after(
-            $('<input type="text" value=test'));
+    $('#btn-add_task').click(function() {
+        $('#task-new').css('display','block');
+    }
     );
 });
