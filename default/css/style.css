@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 *{
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: grey;
+    
 }
 *, *:before, *:after {
     -webkit-box-sizing: inherit;
@@ -12,10 +13,10 @@ a {
     text-decoration: none;
 }
 body {
-    min-height: 100%;
+    min-height: 95%;
     min-width: 100%;
     margin: 0;
-    background-color: #e5e5e5;
+    background-color: rgb(128,128,128,0.1);
     display: flex;
     flex-direction: column;
 }
@@ -29,11 +30,13 @@ header {
     height: 40px;
     margin: 20px 0 0;
     overflow: hidden;
-    background-color: blue;
     color: #fca311;
     font-size: x-large;
     padding: 0 25px;
     vertical-align: middle;
+}
+header, main {
+    padding: 0 25px;
 }
 html {
     -webkit-box-sizing: border-box;
@@ -54,7 +57,6 @@ main {
     order: 0;
     flex: 1; /* takes the remaining height of the "container" div */
     overflow: auto; /* to scroll just the "main" div */
-    background: lightgreen;
 }
 nav {
     /*put nav at bottom of page*/
@@ -63,12 +65,11 @@ nav {
     overflow: hidden;
     /*set dimension to match page*/
     min-width: 100vw;
-    height: 40px;
+    height: 50px;
     /*evenly space out items*/
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: blue;
 }
 #btn-add_task {
     background-color: #fca311;
