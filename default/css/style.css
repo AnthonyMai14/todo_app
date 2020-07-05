@@ -81,6 +81,9 @@ nav {
     font-size: x-large;
     z-index: 1;
 }
+#input-add-task {
+    display: none;
+}
 #nav-items {
     list-style-type: none;
 }
