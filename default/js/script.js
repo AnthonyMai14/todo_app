@@ -13,8 +13,14 @@ $(function() {
 
     $(document).keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
-        if (keycode === 13 && newTask.is(":visible")) {
-            alert(document.querySelector('#task-new-input').value);
+        if (keycode === 13 && 
+            newTask.is(":visible") &&
+            newTask.val() != null && newTask.val() != '') {
+
+            var newTaskValue =  document.querySelector('#task-new-input').value;
+            array_task.push(newTaskValue);
+            alert(array_task[0]);
         }
+
     });
 });
