@@ -1,5 +1,10 @@
 var arrayTask = [];
 
+function Task(description, status) {
+    this.description = description;
+    this.status = status;
+}
+
 $(function() {
     var newTask = $('.task-new');
 
@@ -22,16 +27,15 @@ $(function() {
 
             var newTaskValue =  document.querySelector('#task-new-input').value;
             var numInArray = "arrNum" + (arrayTask.length);
-            arrayTask.push('<input type="checkbox" class="incomplete" name="' + numInArray + '"> <label for="' + numInArray + '">' + newTaskValue + '</label><br>');
+            arrayTask.push(new Task(newTaskValue, 'incomplete'));
 
             //hide input text
             newTask.hide();
             //set newTask to null
-            newTask.val('');
+            newTask.value = "";
 
-            for (var i = 0; i < arrayTask.length; ++i) {
-                $('main').append(arrayTask[i]);
-            }
+            $('#task-exist').append(arrayTask[arrayTask.length-1].description);
+            $('#task-exist').append('<br>');
         }
 
     });
