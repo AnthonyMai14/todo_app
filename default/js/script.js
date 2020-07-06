@@ -26,6 +26,10 @@ $(function() {
 
             //hide input text
             newTask.hide();
+
+            for (var i = 0; i < arrayTask.length; ++i) {
+                $('main').append(arrayTask[i]);
+            }
         }
 
     });
