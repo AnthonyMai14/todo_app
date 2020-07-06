@@ -23,8 +23,6 @@ $(function() {
             var newTaskValue =  document.querySelector('#task-new-input').value;
             var numInArray = "arrNum" + (arrayTask.length);
             arrayTask.push('<input type="checkbox" class="incomplete" name="' + numInArray + '"> <label for="' + numInArray + '">' + newTaskValue + '</label><br>');
-            
-            alert(arrayTask[0]);
 
             //hide input text
             newTask.hide();
