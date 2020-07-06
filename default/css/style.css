@@ -85,5 +85,6 @@ nav {
     list-style-type: none;
 }
 .task-new {
-    visibility: hidden;
+    display: none;
+    z-index: 1;
 }

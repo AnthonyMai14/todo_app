@@ -7,14 +7,14 @@ $(function() {
     }
     );
     
-    $('main').click(function(){
-        newTask.hide();
-    });
+    // $('main').click(function(){
+    //     newTask.hide();
+    // });
 
     $(document).keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode === 13 && newTask.is(":visible")) {
-            alert('You pressed a "enter" key in somewhere');
+            alert(document.querySelector('#task-new-input').value);
         }
     });
 });
