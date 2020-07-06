@@ -3,6 +3,7 @@ var arrayTask = [];
 $(function() {
     var newTask = $('.task-new');
 
+    //show input text 
     $('#btn-add_task').click(function(){
         newTask.show();
     }
@@ -12,6 +13,7 @@ $(function() {
     //     newTask.hide();
     // });
 
+    //Add new task to list after keypress <ENTER> AND valid input
     $(document).keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode === 13 && 
@@ -33,4 +35,5 @@ $(function() {
         }
 
     });
+
 });
