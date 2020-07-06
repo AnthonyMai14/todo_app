@@ -28,6 +28,8 @@ $(function() {
 
             //hide input text
             newTask.hide();
+            //set newTask to null
+            newTask.val('');
 
             for (var i = 0; i < arrayTask.length; ++i) {
                 $('main').append(arrayTask[i]);
