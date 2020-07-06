@@ -19,7 +19,7 @@ $(function() {
 
             var newTaskValue =  document.querySelector('#task-new-input').value;
             array_task.push(newTaskValue);
-            alert(array_task[0]);
+            
 
             //hide input text
             newTask.hide();
