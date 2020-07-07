@@ -85,6 +85,7 @@ nav {
     list-style-type: none;
 }
 .task-delete {
+    visibility: hidden;
     max-height: 12px;
 }
 .task-new {
@@ -97,5 +98,7 @@ nav {
 }
 .task-wrapper:hover {
     background-color: white;
-
+}
+.task-wrapper:hover .task-delete {
+    visibility: visible;
 }
