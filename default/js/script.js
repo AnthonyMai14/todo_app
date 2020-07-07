@@ -16,6 +16,7 @@ $(function() {
     }
     );
     
+    //hide input text when click on <main> but not children of main
     $('main').click(function(e){
         if (e.target != this) { return; }
         newTask.hide();
