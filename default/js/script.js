@@ -16,9 +16,10 @@ $(function() {
     }
     );
     
-    // $('main').click(function(){
-    //     newTask.hide();
-    // });
+    $('main').click(function(e){
+        if (e.target != this) { return; }
+        newTask.hide();
+    });
 
     //iterate through #task-exist and only show false (i.e. active/incomplete) tasks
     // $('#menu-active').click(function() {
