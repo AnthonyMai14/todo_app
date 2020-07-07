@@ -20,14 +20,14 @@ $(function() {
     //     newTask.hide();
     // });
 
-    //only show false (i.e. active/incomplete) tasks
+    //iterate through #task-exist and only show false (i.e. active/incomplete) tasks
     // $('#menu-active').click(function() {
     //     $.each(arrayTask, function (index, description) {
 
     //     });
     // }));
 
-    //only show true (i.e. completed) tasks
+    //iterate through #task-exist and only show true (i.e. completed) tasks
     // $('#menu-completed').click(function() {
 
     // });
@@ -40,7 +40,6 @@ $(function() {
             newTask.val() != null && newTask.val() != '') {
 
             var newTaskValue =  document.querySelector('#task-new-input').value;
-            var numInArray = "arrNum" + (arrayTask.length);
             arrayTask.push(new Task(newTaskValue, false));
 
             //hide input text
@@ -48,8 +47,9 @@ $(function() {
             //set newTask to null
             newTask.value = "";
             
+            var newTaskID = "arrNum" + (arrayTask.length - 1);
             var newTaskObj = arrayTask[arrayTask.length - 1];
-            $('#task-exist').append('<div class="task-wrapper"><input type="checkbox" class="incomplete" id="' + newTaskObj + '"><label for="' + newTaskObj + '">' + newTaskObj.description + '</label><br>');
+            $('#task-exist').append('<div class="task-wrapper ' + newTaskID + '"><input type="checkbox" class="incomplete ' + newTaskID + '"><label for="' + newTaskID + '">' + newTaskObj.description + '</label><img src="default/img/trashIcon.png" class="task-delete">');
         }
 
     });

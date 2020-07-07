@@ -23,6 +23,7 @@ body {
 del {
     color: #fca311;
 }
+
 header {
     -ms-flex-order: -1;
     order: -1;
@@ -45,12 +46,11 @@ html {
     height: 100vh;
     width: 100vw;
 }
+input[type=checkbox] {
+}
 input[type=checkbox]:checked + label {
     text-decoration: line-through;
     color: #fca311;
-}
-label:hover {
-    background-color: white;
 }
 main {
     -ms-flex-order: 0;
@@ -84,7 +84,18 @@ nav {
 #nav-items {
     list-style-type: none;
 }
+.task-delete {
+    max-height: 12px;
+}
 .task-new {
     display: none;
     z-index: 1;
+}
+.task-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+.task-wrapper:hover {
+    background-color: white;
+
 }
