@@ -12,23 +12,23 @@ $(function() {
         // console.log(e.target.tagName);
         if ($(this).hasClass('incomplete')) {
             $(this).addClass('complete').removeClass('incomplete');
-            $(this).find('i').addClass('fa-check-circle-o').removeClass('fa-circle-o');
+            $(this).find('i.fa-circle-o').addClass('fa-check-circle-o').removeClass('fa-circle-o');
         }
         else {
             $(this).addClass('incomplete').removeClass('complete');
-            $(this).find('i').addClass('fa-circle-o').removeClass('fa-check-circle-o');
+            $(this).find('i.fa-check-circle-o').addClass('fa-circle-o').removeClass('fa-check-circle-o');
         }
     });
     
     //hide input text when click on <main> but not children of main
     $('main, .menu').click(function(e){
+        console.log(e.target.tagName);
         if (e.target != this) { return; }
         $('.task-new').hide();
     });
 
     //delete task
     $('.task-wrapper > .task-delete').focus(function() {
-        console.log("hello");
         $(this).parentElement.remove();
     });
 
