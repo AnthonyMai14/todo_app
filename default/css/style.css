@@ -82,6 +82,9 @@ nav {
 #nav-items {
     list-style-type: none;
 }
+.fa-check-circle-o{
+    color: #fca311;
+}
 .task-delete {
     visibility: hidden;
     max-height: 12px;

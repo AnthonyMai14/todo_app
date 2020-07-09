@@ -26,6 +26,7 @@ $(function() {
     //show input text 
     $('#btn-add_task').click(function(){
         $('.task-new').show();
+        $('.task-new').css('display','inline');
     }
     );
 
@@ -68,24 +69,24 @@ $(function() {
         $('.incomplete').parentElement.css('display', 'hide');
     });
 
-    $('input:text').focus(
-        function () {
-            $(this).val('');
-        });
+    // $('input:text').focus(
+    //     function () {
+    //         $(this).val('');
+    //     });
 
     //Add new task to list after keypress <ENTER> AND valid input
     $(document).keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode === 13 && $('.task-new').is(":visible")) {
             
-            if ($('.task-new').val() != '') {
+            if ($('#task-new-input').val() != '') {
                 var newTaskValue =  document.querySelector('#task-new-input').value;
                 arrayTask.push(new Task(newTaskValue, false));
     
                 //hide input text
                 $('.task-new').hide();
                 //set .task-new to null
-                // $('.task-new').val('');
+                $('#task-new-input').val('');
                 
                 var newTaskID = "arrNum" + (arrayTask.length - 1);
                 var newTaskObj = arrayTask[arrayTask.length - 1];
