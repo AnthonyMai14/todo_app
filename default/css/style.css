@@ -83,7 +83,7 @@ nav {
     list-style-type: none;
 }
 .fa {
-    margin-right: 5px;
+    margin: 0 5px;
 }
 .fa-check-circle-o{
     color: #fca311;
