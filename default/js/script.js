@@ -28,6 +28,7 @@ $(function() {
 
     //delete task
     $('.task-wrapper > .task-delete').focus(function() {
+        console.log("hello");
         $(this).parentElement.remove();
     });
 
@@ -77,7 +78,7 @@ $(function() {
         if (keycode === 13 && $('.task-new').is(":visible")) {
             
             if ($('#task-new-input').val() != '') {
-                $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o" aria-hidden="true"></i><span>' + document.querySelector('#task-new-input').value + '</span><img src="default/img/trashIcon.png" class="task-delete">');
+                $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o" aria-hidden="true"></i><span>' + document.querySelector('#task-new-input').value + '</span><i class="fa fa-trash-o task-delete"></i>');
 
                 //set .task-new to null
                 $('#task-new-input').val('');
