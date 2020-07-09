@@ -30,9 +30,6 @@ $(function() {
     $('.task-wrapper > .task-delete').focus(function() {
         this.parentElement.remove();
     });
-        //retrieve ID
-        //delete div
-        //delete that index from the array
 
     $('#menu-all').click(function () {
         $('.completed').css('display', 'block');
