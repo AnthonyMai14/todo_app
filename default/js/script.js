@@ -38,7 +38,7 @@ $(function() {
     
     // iterate through #task-exist and only show false (i.e. active/incomplete) tasks
     $('#menu-active').click(function() {
-        $('.completed').css('display','none');
+        $('.complete').css('display','none');
         $('.incomplete').css('display', 'block');
     });
 
