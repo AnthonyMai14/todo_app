@@ -57,7 +57,7 @@ $(function() {
         if (keycode === 13 && $('.task-new').is(":visible")) {
             
             if ($('#task-new-input').val() != '') {
-                $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o" aria-hidden="true"></i><p>' + document.querySelector('#task-new-input').value + '</p><img src="default/img/trashIcon.png" class="task-delete">');
+                $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o" aria-hidden="true"></i>' + document.querySelector('#task-new-input').value + '<img src="default/img/trashIcon.png" class="task-delete">');
 
                 //hide input text
                 $('.task-new').hide();
