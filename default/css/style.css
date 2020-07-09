@@ -99,6 +99,7 @@ nav {
 .task-wrapper {
     display: flex;
     align-items: baseline;
+    border-radius: 10px;
 }
 .task-wrapper:hover {
     background-color: white;
