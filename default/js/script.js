@@ -31,6 +31,7 @@ $(function() {
         $(this).parentElement.remove();
     });
 
+    //clink on #menu-all: display all task, change color of other menu, enable add button
     $('#menu-all').click(function () {
         $('.complete').css('display', 'block');
         $('.incomplete').css('display', 'block');
