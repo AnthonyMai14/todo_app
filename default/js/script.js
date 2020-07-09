@@ -69,11 +69,6 @@ $(function() {
         $('.incomplete').parentElement.css('display', 'hide');
     });
 
-    // $('input:text').focus(
-    //     function () {
-    //         $(this).val('');
-    //     });
-
     //Add new task to list after keypress <ENTER> AND valid input
     $(document).keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
