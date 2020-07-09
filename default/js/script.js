@@ -7,14 +7,17 @@ $(function() {
         $('.task-new').css('display','inline');
     }
     );
-    //if div clicked; change the child <i> .addClass('fa-check-circle-o).removeClass('fa-circle-o')
-    //if div clicked 
-    $('.text-wrapper').click(function() {
-        this.addClass('complete').removeClass('incomplete');
-    });
-
-    $('input[type=checkbox]unchekced').each(function () {
-        this.addClass('incomplete').removeClass('complete');
+    //if div clicked, change 'status' (i.e. incomplete/complete) and circle-o)
+    $('.task-wrapper').click(function() {
+        alert('this is an alert');
+        if (this.hasClass('incomplete')) {
+            this.addClass('complete').removeClass('incomplete');
+            this.find('i').addClass('fa-check-circle-o').removeClass('fa-circle-o');
+        }
+        else {
+            this.addClass('incomplete').removeClass('complete');
+            this.find('i').addClass('fa-circle-o').removeClass('fa-check-circle-o');
+        }
     });
     
     //hide input text when click on <main> but not children of main
@@ -32,20 +35,20 @@ $(function() {
         //delete that index from the array
 
     $('#menu-all').click(function () {
-        $('.completed').parentElement.css('display', 'show');
-        $('.incomplete').parentElement.css('display', 'show');
+        $('.completed').css('display', 'inline');
+        $('.incomplete').css('display', 'block');
     });
     
     // iterate through #task-exist and only show false (i.e. active/incomplete) tasks
     $('#menu-active').click(function() {
-        $('.completed').parentElement.css('display','hide');
-        $('.incomplete').parentElement.css('display', 'show');
+        $('.completed').css('display','none');
+        $('.incomplete').css('display', 'inline');
     });
 
     //iterate through #task-exist and only show true (i.e. completed) tasks
     $('#menu-completed').click(function() {
-        $('.completed').parentElement.css('display', 'show');
-        $('.incomplete').parentElement.css('display', 'hide');
+        $('.completed').css('display', 'inline');
+        $('.incomplete').css('display', 'none');
     });
 
     //Add new task to list after keypress <ENTER> AND valid input
@@ -54,7 +57,7 @@ $(function() {
         if (keycode === 13 && $('.task-new').is(":visible")) {
             
             if ($('#task-new-input').val() != '') {
-                $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o incomplete" aria-hidden="true"></i><p>' + document.querySelector('#task-new-input').value + '</p><img src="default/img/trashIcon.png" class="task-delete">');
+                $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o" aria-hidden="true"></i><p>' + document.querySelector('#task-new-input').value + '</p><img src="default/img/trashIcon.png" class="task-delete">');
 
                 //hide input text
                 $('.task-new').hide();
