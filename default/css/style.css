@@ -53,13 +53,6 @@ main {
     overflow: auto; /* to scroll just the "main" div */
 }
 nav {
-    /*put nav at bottom of page*/
-    -ms-flex-order: 1;
-    order: 1;
-    overflow: hidden;
-    /*set dimension to match page*/
-    min-width: 100vw;
-    height: 50px;
     /*evenly space out items*/
     display: flex;
     align-items: center;
@@ -89,8 +82,23 @@ nav {
 .fa {
     margin: 0 5px;
 }
+.fa-circle {
+    width: 5px;
+    color: #fca311;
+}
 .fa-check-circle-o{
     color: #fca311;
+}
+.menu-ball-wrapper {
+    align-self: flex-end;
+}
+.nav-wrapper {
+    /*put nav at bottom of page*/
+    -ms-flex-order: 1;
+    order: 1;
+    /*set dimension to match page*/
+    min-width: 100vw;
+    height: 50px;
 }
 .task-delete {
     visibility: hidden;
