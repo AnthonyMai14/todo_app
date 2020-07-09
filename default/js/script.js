@@ -32,7 +32,7 @@ $(function() {
     });
 
     $('#menu-all').click(function () {
-        $('.completed').css('display', 'block');
+        $('.complete').css('display', 'block');
         $('.incomplete').css('display', 'block');
     });
     
@@ -43,8 +43,8 @@ $(function() {
     });
 
     //iterate through #task-exist and only show true (i.e. completed) tasks
-    $('#menu-completed').click(function() {
-        $('.completed').css('display', 'block');
+    $('#menu-complete').click(function() {
+        $('.complete').css('display', 'block');
         $('.incomplete').css('display', 'none');
     });
 
