@@ -90,7 +90,7 @@ $(function() {
                 
                 var newTaskID = "arrNum" + (arrayTask.length - 1);
                 var newTaskObj = arrayTask[arrayTask.length - 1];
-                $('#task-exist').append('<div class="task-wrapper ' + newTaskID + '"><input type="checkbox" class="incomplete ' + newTaskID + '"><label for="' + newTaskID + '">' + newTaskObj.description + '</label><img src="default/img/trashIcon.png" class="task-delete ' + newTaskID + '">');
+                $('#task-exist').append('<div class="task-wrapper ' + newTaskID + '"><i class="fa fa-circle-o incomplete" aria-hidden="true"></i><label for="' + newTaskID + '">' + newTaskObj.description + '</label><img src="default/img/trashIcon.png" class="task-delete ' + newTaskID + '">');
     
                 if (event.preventDefault) event.preventDefault(); // This should fix it
                 return false; // Just a workaround for old browsers
