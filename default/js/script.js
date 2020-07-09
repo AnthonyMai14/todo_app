@@ -1,25 +1,3 @@
-var arrayTask = [];
-var tempHTML = "";
-
-function Task(description, status) {
-    this.description = description;
-    this.status = status;
-
-    status = false;
-}
-
-// if (arrayTask.length !== 0) {
-//     $.each(arrayTask, function (indexObj) {
-//         var newTaskID = "arrNum" + indexObj;
-//         tempHTML = "bob";
-//         tempHTML = '<div class="task-wrapper' + newTaskID + '"><input type="checkbox" class="';
-//         tempHTML += (index.status === false) ? "incomplete " : "complete ";
-//         tempHTML += (newTaskID + '"><label for="' + newTaskID + '">' + indexObj.description + '</label><img src="default/img/trashIcon.png" class="task-delete"></div>');
-//         alert("tempHTML");
-
-//     });
-//     $('#task-exist').append(tempHTML);
-// }
 
 $(function() {
 
@@ -29,8 +7,9 @@ $(function() {
         $('.task-new').css('display','inline');
     }
     );
-
-    $('input[type=checkbox]checked').each(function() {
+    //if div clicked; change the child <i> .addClass('fa-check-circle-o).removeClass('fa-circle-o')
+    //if div clicked 
+    $('.text-wrapper').click(function() {
         this.addClass('complete').removeClass('incomplete');
     });
 
@@ -75,17 +54,12 @@ $(function() {
         if (keycode === 13 && $('.task-new').is(":visible")) {
             
             if ($('#task-new-input').val() != '') {
-                var newTaskValue =  document.querySelector('#task-new-input').value;
-                arrayTask.push(new Task(newTaskValue, false));
-    
+                $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o incomplete" aria-hidden="true"></i><p>' + document.querySelector('#task-new-input').value + '</p><img src="default/img/trashIcon.png" class="task-delete">');
+
                 //hide input text
                 $('.task-new').hide();
                 //set .task-new to null
                 $('#task-new-input').val('');
-                
-                var newTaskID = "arrNum" + (arrayTask.length - 1);
-                var newTaskObj = arrayTask[arrayTask.length - 1];
-                $('#task-exist').append('<div class="task-wrapper ' + newTaskID + '"><i class="fa fa-circle-o incomplete" aria-hidden="true"></i><label for="' + newTaskID + '">' + newTaskObj.description + '</label><img src="default/img/trashIcon.png" class="task-delete ' + newTaskID + '">');
     
                 if (event.preventDefault) event.preventDefault(); // This should fix it
                 return false; // Just a workaround for old browsers
