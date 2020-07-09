@@ -75,12 +75,16 @@ nav {
     font-size: x-large;
     z-index: 1;
 }
+/*default have #menu-all set to #fca311*/
+#menu-all {
+    color: #fca311;
+}
 #nav-items {
     list-style-type: none;
 }
 .complete > span {
     text-decoration: line-through;
-    color: #fca311;;
+    color: #fca311;
 }
 .fa {
     margin: 0 5px;

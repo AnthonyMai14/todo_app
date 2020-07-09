@@ -34,18 +34,40 @@ $(function() {
     $('#menu-all').click(function () {
         $('.complete').css('display', 'block');
         $('.incomplete').css('display', 'block');
+
+        $(this).css('color', '#fca311');
+        $('#menu-active').css('color', 'grey');
+        $('#menu-complete').css('color', 'grey');
+
+        $('#btn-add_task').prop('disabled', false);
+        $('#btn-add_task').css('background-color', '#fca311');
     });
     
     // iterate through #task-exist and only show false (i.e. active/incomplete) tasks
     $('#menu-active').click(function() {
         $('.complete').css('display','none');
         $('.incomplete').css('display', 'block');
+
+        $(this).css('color', '#fca311');
+        $('#menu-all').css('color', 'grey');
+        $('#menu-complete').css('color', 'grey');
+
+        $('#btn-add_task').prop('disabled', false);
+        $('#btn-add_task').css('background-color', '#fca311');
     });
 
     //iterate through #task-exist and only show true (i.e. completed) tasks
     $('#menu-complete').click(function() {
         $('.complete').css('display', 'block');
         $('.incomplete').css('display', 'none');
+
+        $(this).css('color', '#fca311');
+        $('#menu-all').css('color', 'grey');
+        $('#menu-active').css('color', 'grey');
+
+        //disable add button
+        $('#btn-add_task').prop('disabled', true);
+        $('#btn-add_task').css('background-color', 'grey');
     });
 
     //Add new task to list after keypress <ENTER> AND valid input
