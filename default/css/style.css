@@ -46,10 +46,6 @@ html {
     height: 100vh;
     width: 100vw;
 }
-input[type=checkbox]:checked + label {
-    text-decoration: line-through;
-    color: #fca311;
-}
 main {
     -ms-flex-order: 0;
     order: 0;
@@ -81,6 +77,10 @@ nav {
 }
 #nav-items {
     list-style-type: none;
+}
+.complete > p {
+    text-decoration: line-through;
+    color: #fca311;;
 }
 .fa {
     margin: 0 5px;
