@@ -72,9 +72,6 @@ nav {
 #menu-all {
     color: #fca311;
 }
-#nav-items {
-    list-style-type: none;
-}
 .complete > span {
     text-decoration: line-through;
     color: #fca311;
@@ -85,6 +82,7 @@ nav {
 .fa-circle {
     width: 5px;
     color: #fca311;
+    right: 100px;
 }
 .fa-check-circle-o{
     color: #fca311;
