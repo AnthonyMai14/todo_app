@@ -28,8 +28,8 @@ $(function() {
     });
 
     //delete task
-    $('.task-wrapper > .task-delete').focus(function() {
-        $(this).parentElement.remove();
+    $('main').on('click', '.task-wrapper>.task-delete',function() {
+        $(this).parents('.task-wrapper').remove();
     });
 
     //clink on #menu-all: display all task, change color of other menu, enable add button
