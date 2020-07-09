@@ -8,15 +8,15 @@ $(function() {
     }
     );
     //if div clicked, change 'status' (i.e. incomplete/complete) and circle-o)
-    $('.task-wrapper').click(function() {
-        alert('this is an alert');
-        if (this.hasClass('incomplete')) {
-            this.addClass('complete').removeClass('incomplete');
-            this.find('i').addClass('fa-check-circle-o').removeClass('fa-circle-o');
+    $('main').on('click', 'div.task-wrapper', function() {
+        // console.log(e.target.tagName);
+        if ($(this).hasClass('incomplete')) {
+            $(this).addClass('complete').removeClass('incomplete');
+            $(this).find('i').addClass('fa-check-circle-o').removeClass('fa-circle-o');
         }
         else {
-            this.addClass('incomplete').removeClass('complete');
-            this.find('i').addClass('fa-circle-o').removeClass('fa-check-circle-o');
+            $(this).addClass('incomplete').removeClass('complete');
+            $(this).find('i').addClass('fa-circle-o').removeClass('fa-check-circle-o');
         }
     });
     
@@ -28,7 +28,7 @@ $(function() {
 
     //delete task
     $('.task-wrapper > .task-delete').focus(function() {
-        this.parentElement.remove();
+        $(this).parentElement.remove();
     });
 
     $('#menu-all').click(function () {
