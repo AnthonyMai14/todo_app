@@ -22,11 +22,10 @@ function Task(description, status) {
 // }
 
 $(function() {
-    var newTask = $('.task-new');
 
     //show input text 
     $('#btn-add_task').click(function(){
-        newTask.show();
+        $('.task-new').show();
     }
     );
 
@@ -41,11 +40,11 @@ $(function() {
     //hide input text when click on <main> but not children of main
     $('main').click(function(e){
         if (e.target != this) { return; }
-        newTask.hide();
+        $('.task-new').hide();
     });
 
     //delete task
-    $('.task-wrapper > .task-delete').click(function(e) {
+    $('.task-wrapper > .task-delete').focus(function() {
         this.parentElement.remove();
     });
         //retrieve ID
@@ -69,27 +68,33 @@ $(function() {
         $('.incomplete').parentElement.css('display', 'hide');
     });
 
+    $('input:text').focus(
+        function () {
+            $(this).val('');
+        });
+
     //Add new task to list after keypress <ENTER> AND valid input
     $(document).keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
-        if (keycode === 13 && 
-            newTask.is(":visible") &&
-            newTask.val() != null && newTask.val() != '') {
-
-            var newTaskValue =  document.querySelector('#task-new-input').value;
-            arrayTask.push(new Task(newTaskValue, false));
-
-            //hide input text
-            newTask.hide();
-            //set .task-new to null
-            $('.task-new').val('');
+        if (keycode === 13 && $('.task-new').is(":visible")) {
             
-            var newTaskID = "arrNum" + (arrayTask.length - 1);
-            var newTaskObj = arrayTask[arrayTask.length - 1];
-            $('#task-exist').append('<div class="task-wrapper ' + newTaskID + '"><input type="checkbox" class="incomplete ' + newTaskID + '"><label for="' + newTaskID + '">' + newTaskObj.description + '</label><img src="default/img/trashIcon.png" class="task-delete ' + newTaskID + '">');
+            if ($('.task-new').val() != '') {
+                var newTaskValue =  document.querySelector('#task-new-input').value;
+                arrayTask.push(new Task(newTaskValue, false));
+    
+                //hide input text
+                $('.task-new').hide();
+                //set .task-new to null
+                // $('.task-new').val('');
+                
+                var newTaskID = "arrNum" + (arrayTask.length - 1);
+                var newTaskObj = arrayTask[arrayTask.length - 1];
+                $('#task-exist').append('<div class="task-wrapper ' + newTaskID + '"><input type="checkbox" class="incomplete ' + newTaskID + '"><label for="' + newTaskID + '">' + newTaskObj.description + '</label><img src="default/img/trashIcon.png" class="task-delete ' + newTaskID + '">');
+    
+                if (event.preventDefault) event.preventDefault(); // This should fix it
+                return false; // Just a workaround for old browsers
 
-            if (event.preventDefault) event.preventDefault(); // This should fix it
-            return false; // Just a workaround for old browsers
+            }
         }
 
     });
