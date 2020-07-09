@@ -35,19 +35,19 @@ $(function() {
         //delete that index from the array
 
     $('#menu-all').click(function () {
-        $('.completed').css('display', 'inline');
+        $('.completed').css('display', 'block');
         $('.incomplete').css('display', 'block');
     });
     
     // iterate through #task-exist and only show false (i.e. active/incomplete) tasks
     $('#menu-active').click(function() {
         $('.completed').css('display','none');
-        $('.incomplete').css('display', 'inline');
+        $('.incomplete').css('display', 'block');
     });
 
     //iterate through #task-exist and only show true (i.e. completed) tasks
     $('#menu-completed').click(function() {
-        $('.completed').css('display', 'inline');
+        $('.completed').css('display', 'block');
         $('.incomplete').css('display', 'none');
     });
 
