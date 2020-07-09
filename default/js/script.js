@@ -56,8 +56,6 @@ $(function() {
             if ($('#task-new-input').val() != '') {
                 $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o" aria-hidden="true"></i><span>' + document.querySelector('#task-new-input').value + '</span><img src="default/img/trashIcon.png" class="task-delete">');
 
-                //hide input text
-                $('.task-new').hide();
                 //set .task-new to null
                 $('#task-new-input').val('');
     
