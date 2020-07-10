@@ -101,6 +101,7 @@ nav {
 .task-delete {
     visibility: hidden;
     max-height: 12px;
+    margin-left: auto;
 }
 .task-new {
     display: none;
@@ -109,11 +110,13 @@ nav {
 .task-wrapper {
     display: flex;
     align-items: baseline;
+    justify-content: flex-start;
     border-radius: 10px;
     padding: 10px;
 }
 .task-wrapper:hover {
     background-color: white;
+    visibility: visible;
 }
 .task-wrapper:hover .task-delete {
     visibility: visible;
