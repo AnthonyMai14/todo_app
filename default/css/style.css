@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 *{
     font-family: 'Roboto', sans-serif;
-    color: grey;
+    color: #14213D;
     
 }
 *, *:before, *:after {
@@ -11,6 +11,10 @@
 }
 a {
     text-decoration: none;
+    color: rgba(20,33,61,0.33);
+}
+a, input, .task-wrapper {
+    font-size: 16px;
 }
 body {
     min-height: 95%;
@@ -29,15 +33,12 @@ header {
     order: -1;
     width: 100%;
     height: 40px;
-    margin: 20px 0 0;
+    margin: 40px 0 0;
     overflow: hidden;
     color: #fca311;
     font-size: x-large;
-    padding: 0 25px;
+    padding: 0 40px;
     vertical-align: middle;
-}
-header, main {
-    padding: 0 25px;
 }
 html {
     -webkit-box-sizing: border-box;
@@ -46,17 +47,24 @@ html {
     height: 100vh;
     width: 100vw;
 }
+input {
+    border: none;
+}
 main {
     -ms-flex-order: 0;
     order: 0;
     flex: 1; /* takes the remaining height of the "container" div */
     overflow: auto; /* to scroll just the "main" div */
+    padding: 0 20px;
 }
 nav {
     /*evenly space out items*/
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+textarea:focus, input:focus{
+    outline: none;
 }
 #btn-add_task {
     background-color: #fca311;
@@ -65,19 +73,27 @@ nav {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    font-size: x-large;
+    font-size: 16px;
     z-index: 1;
 }
 /*default have #menu-all set to #fca311*/
 #menu-all {
     color: #fca311;
 }
+#task-new {
+    display: none;
+    background-color: white;
+}
+#task-new, .task-wrapper {
+    padding: 7.5px 20px;
+    border-radius: 10px;
+}
 .complete > span {
     text-decoration: line-through;
     color: #fca311;
 }
 .fa {
-    margin: 0 5px;
+    margin-right: 15px;
 }
 .fa-circle {
     width: 5px;
@@ -103,16 +119,10 @@ nav {
     max-height: 12px;
     margin-left: auto;
 }
-.task-new {
-    display: none;
-    z-index: 1;
-}
 .task-wrapper {
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
-    border-radius: 10px;
-    padding: 10px;
 }
 .task-wrapper:hover {
     background-color: white;

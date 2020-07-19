@@ -3,8 +3,8 @@ $(function() {
 
     //show input text 
     $('#btn-add_task').click(function(){
-        $('.task-new').show();
-        $('.task-new').css('display','inline');
+        $('#task-new').show();
+        $('#task-new').css('display','block');
     }
     );
     //if div clicked, change 'status' (i.e. incomplete/complete) and circle-o)
@@ -22,9 +22,8 @@ $(function() {
     
     //hide input text when click on <main> but not children of main
     $('main, .menu').click(function(e){
-        console.log(e.target.tagName);
         if (e.target != this) { return; }
-        $('.task-new').hide();
+        $('#task-new').hide();
     });
 
     //delete task
@@ -75,12 +74,12 @@ $(function() {
     //Add new task to list after keypress <ENTER> AND valid input
     $(document).keypress(function (event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
-        if (keycode === 13 && $('.task-new').is(":visible")) {
+        if (keycode === 13 && $('#task-new').is(":visible")) {
             
             if ($('#task-new-input').val() != '') {
                 $('#task-exist').append('<div class="task-wrapper incomplete"><i class="fa fa-circle-o" aria-hidden="true"></i><span>' + document.querySelector('#task-new-input').value + '</span><i class="fa fa-trash-o task-delete"></i>');
 
-                //set .task-new to null
+                //set #task-new to null
                 $('#task-new-input').val('');
     
                 if (event.preventDefault) event.preventDefault(); // This should fix it
